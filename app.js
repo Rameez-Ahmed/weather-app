@@ -1,5 +1,3 @@
-// Tutorial by http://youtube.com/CodeExplained
-// api key : 82005d27a116c2880c8f0fcb866998a0
 
 //SELECT ELEMENTS
 const iconElement = document.querySelector(".weather-icon");
@@ -64,24 +62,18 @@ function getWeather(latitude, longitude) {
 
 			displayWeather();
 		});
-
-
-
 } 
 // display
 function displayWeather(){
 	iconElement.innerHTML =`<img src="icons/${weather.iconId}.png"/>`;
 	tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
 	descElement.innerHTML = weather.description;
-	locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-
+	locationElement.innerHTML = `${weather.city}, ${weather.country}`;	
 }
 //c to f
 function celsiusToFahrenheit(temperature) {
-	return (temperature * 9/5) + 32;
-	
+	return (temperature * 9/5) + 32;	
 }
-
 //action on click
 tempElement.addEventListener("click", function(){
 	if(weather.temperature.value === undefined) return;
@@ -97,6 +89,4 @@ tempElement.addEventListener("click", function(){
 		weather.temperature.unit = "celsius"
 
 	}
-
-
 })
